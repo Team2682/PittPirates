@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShooterAim extends Command {
+public class ShooterTurrentUp extends Command {
 
-    public ShooterAim() {
-    	requires(Robot.aimer);
+    public ShooterTurrentUp() {
+    	requires(Robot.shooterTurrent);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -21,19 +21,15 @@ public class ShooterAim extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-//    	if(Robot.aimer.aimpot.get() > 4.3){
-//    		Robot.aimer.aimshooter(-.5);
-//    	}else if(Robot.aimer.aimpot.get() < 2.7){
-//    		Robot.aimer.aimshooter(.5);
-//    	}else{{
-    		Robot.aimer.aimshooter(Robot.oi.getxbox().getRawAxis(5));
+    	if(!Robot.shooterTurrent.getIsUpperLimit())
+    	{
+    		Robot.shooterTurrent.up();
     	}
-    	
-//    }
+    }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

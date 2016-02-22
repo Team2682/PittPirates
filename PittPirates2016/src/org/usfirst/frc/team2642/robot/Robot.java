@@ -21,9 +21,11 @@ public class Robot extends IterativeRobot {
 	public static final DriveTrain drivetrain = new DriveTrain();
 	public static final Intake intake = new Intake();
 	public static final Roller roller = new Roller();
-	//public static final Aimer aimer = new Aimer();
-	public static final DeployerArms lowarms = new DeployerArms();
 	public static final CameraMount cameramount = new CameraMount();
+	
+	public static final RollerArm rollerArm = new RollerArm();
+	public static final ShooterTurrent shooterTurrent = new ShooterTurrent();
+	
 	public static OI oi;
 
     Command autonomousCommand;
@@ -100,7 +102,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        SmartDashboard.putNumber("Potentiometer", Robot.aimer.aimpot.get());
+        //SmartDashboard.putNumber("Potentiometer", Robot.aimer.aimpot.get());
         }
     
     /**

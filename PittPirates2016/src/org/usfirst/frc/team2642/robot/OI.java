@@ -3,7 +3,7 @@ package org.usfirst.frc.team2642.robot;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team2642.robot.commands.ShooterAim;
+import org.usfirst.frc.team2642.robot.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
 
@@ -20,12 +20,19 @@ public class OI {
 	public Button xboxRelease = new JoystickButton(xboxStick, 2);
 	public Button xboxSpinUp = new JoystickButton(xboxStick, 3);
 	public Button xboxY = new JoystickButton(xboxStick, 4);
-	public Button xboxToggleAim = new JoystickButton(xboxStick, 5);
-	public Button xboxRB= new JoystickButton(xboxStick, 6);
-	public Button xboxBack = new JoystickButton(xboxStick, 7);
-	public Button xboxStart = new JoystickButton(xboxStick, 8);
+	//public Button xboxToggleAim = new JoystickButton(xboxStick, 5);
+	//public Button xboxRB= new JoystickButton(xboxStick, 6);
+	//public Button xboxBack = new JoystickButton(xboxStick, 7);
+	//public Button xboxStart = new JoystickButton(xboxStick, 8);
 	public Button xboxLeftClick = new JoystickButton(xboxStick, 9);
 	public Button xboxRightClick = new JoystickButton(xboxStick, 10);
+	
+	/***********************************************/
+	Button btnShooterTurrentUp = new JoystickButton(xboxStick, RobotMap.btnShooterTurrentUp);
+	Button btnShooterTurrentDown = new JoystickButton(xboxStick, RobotMap.btnShooterTurrentDown);
+	Button btnRollerArmUp = new JoystickButton(xboxStick, RobotMap.btnRollerArmUp);
+	Button btnRollerArmDown = new JoystickButton(xboxStick, RobotMap.btnRollerArmDown);
+	/***********************************************/
 	
 	Joystick armStick = new Joystick(1);
 	public Joystick getarm(){
@@ -47,7 +54,15 @@ public class OI {
 
 		
 	public OI() {
-		xboxToggleAim.whileHeld(new ShooterAim());
+		//xboxToggleAim.whileHeld(new ShooterAim());
+		
+		/********************************************************/
+		btnShooterTurrentUp.whileHeld(new ShooterTurrentUp());
+		btnShooterTurrentDown.whileHeld(new ShooterTurrentDown());
+		btnRollerArmUp.whileHeld(new RollerArmUp());
+		btnRollerArmDown.whileHeld(new RollerArmDown());
+		/********************************************************/
+		
 	}
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.

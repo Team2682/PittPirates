@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Shoot extends Command {
+public class RollerArmDown extends Command {
 
-    public Shoot() {
-    	requires(Robot.intake);
+    public RollerArmDown() {
+    	requires(Robot.rollerArm);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -21,28 +21,16 @@ public class Shoot extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.oi.xboxIntake.get() || Robot.oi.armIntake.get()){						//Intake
-    		Robot.intake.shooter(-.45);	
-    		Robot.intake.kick(false);
-    	}else if(Robot.oi.xboxRelease.get() || Robot.oi.auxSlow.get()){					//SlowRelease
-    		Robot.intake.shooter(.45);
-    		Robot.intake.kick(true);
-    	}else if(Robot.oi.xboxSpinUp.get() || Robot.oi.auxSpinUp.get()){				//Shoot	
-    		Robot.intake.shooter(1);
-    		if((Robot.oi.getxbox().getRawAxis(3) > .45) || Robot.oi.auxFire.get()){
-    			Robot.intake.kick(true);
-    		}else{
-    			Robot.intake.kick(false);
-    		}
-    	}else{																			//Idle
-    		Robot.intake.shooter(0);
-    		Robot.intake.kick(false);
+    	if(!Robot.rollerArm.getIsLowerLimit())
+    	{
+    		Robot.rollerArm.down();
     	}
-    	}
+    	
+    }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
