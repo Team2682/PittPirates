@@ -27,12 +27,7 @@ public class OI {
 	public Button xboxLeftClick = new JoystickButton(xboxStick, 9);
 	public Button xboxRightClick = new JoystickButton(xboxStick, 10);
 	
-	/***********************************************/
-	Button btnShooterTurrentUp = new JoystickButton(xboxStick, RobotMap.btnShooterTurrentUp);
-	Button btnShooterTurrentDown = new JoystickButton(xboxStick, RobotMap.btnShooterTurrentDown);
-	Button btnRollerArmUp = new JoystickButton(xboxStick, RobotMap.btnRollerArmUp);
-	Button btnRollerArmDown = new JoystickButton(xboxStick, RobotMap.btnRollerArmDown);
-	/***********************************************/
+	
 	
 	Joystick armStick = new Joystick(1);
 	public Joystick getarm(){
@@ -51,6 +46,13 @@ public class OI {
 	public Button auxDeployIn = new JoystickButton(auxillary, 5);				
 	public Button auxDToggleSet = new JoystickButton(auxillary, 6);		//Deployer Toggle
 	public Button auxDToggleCustom = new JoystickButton(auxillary, 7);
+	
+	/***********************************************/
+	Button btnShooterTurrentUp = new JoystickButton(xboxStick, RobotMap.btnShooterTurrentUp);
+	Button btnShooterTurrentDown = new JoystickButton(xboxStick, RobotMap.btnShooterTurrentDown);
+	Button btnRollerArmUp = new JoystickButton(auxillary, RobotMap.btnRollerArmUp);
+	Button btnRollerArmDown = new JoystickButton(auxillary, RobotMap.btnRollerArmDown);
+	/***********************************************/
 
 		
 	public OI() {

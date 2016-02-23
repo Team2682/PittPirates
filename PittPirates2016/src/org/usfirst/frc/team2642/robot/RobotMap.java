@@ -17,8 +17,8 @@ public class RobotMap {
 	/***************************************************/
 	public static int btnShooterTurrentUp = 5;
 	public static int btnShooterTurrentDown = 6;
-	public static int btnRollerArmUp = 7;
-	public static int btnRollerArmDown = 8;
+	public static int btnRollerArmUp = 4;
+	public static int btnRollerArmDown = 5;
 	
 	public static int rollerArmMotor = 8;
 	public static double rollerArmMotorSpeed = .55;

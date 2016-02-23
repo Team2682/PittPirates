@@ -22,13 +22,17 @@ public class Shoot extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if(Robot.oi.xboxIntake.get() || Robot.oi.armIntake.get()){						//Intake
-    		Robot.intake.shooter(-.45);	
+    		Robot.intake.shooter(-.65);	
     		Robot.intake.kick(false);
-    	}else if(Robot.oi.xboxRelease.get() || Robot.oi.auxSlow.get()){					//SlowRelease
-    		Robot.intake.shooter(.45);
-    		Robot.intake.kick(true);
     	}else if(Robot.oi.xboxSpinUp.get() || Robot.oi.auxSpinUp.get()){				//Shoot	
     		Robot.intake.shooter(1);
+    		if((Robot.oi.getxbox().getRawAxis(3) > .45) || Robot.oi.auxFire.get()){
+    			Robot.intake.kick(true);
+    		}else{
+    			Robot.intake.kick(false);
+    		}
+    	}else if(Robot.oi.xboxRelease.get() || Robot.oi.auxSlow.get()){
+    		Robot.intake.shooter(60);
     		if((Robot.oi.getxbox().getRawAxis(3) > .45) || Robot.oi.auxFire.get()){
     			Robot.intake.kick(true);
     		}else{
