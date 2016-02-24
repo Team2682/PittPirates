@@ -63,6 +63,8 @@ public class OI {
 		btnShooterTurrentDown.whileHeld(new ShooterTurrentDown());
 		btnRollerArmUp.whileHeld(new RollerArmUp());
 		btnRollerArmDown.whileHeld(new RollerArmDown());
+		armRetract.whileHeld(new RetractArm());
+		armExtend.whileHeld(new ExtendArm());
 		/********************************************************/
 		
 	}

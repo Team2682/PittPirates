@@ -22,9 +22,10 @@ public class Robot extends IterativeRobot {
 	public static final Intake intake = new Intake();
 	public static final Roller roller = new Roller();
 	public static final CameraMount cameramount = new CameraMount();
-	
+	public static final ArmWinch armwinch = new ArmWinch();
 	public static final RollerArm rollerArm = new RollerArm();
 	public static final ShooterTurrent shooterTurrent = new ShooterTurrent();
+	public static final ArmExtender armextender = new ArmExtender();
 	
 	public static OI oi;
 
